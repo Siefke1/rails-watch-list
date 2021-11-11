@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-  before_action :set_list, only: [:show, :new]
+  before_action :set_list, only: [:show]
 
   def index
     @lists = List.all
@@ -9,11 +9,12 @@ class ListsController < ApplicationController
   end
 
   def new
+    @list = List.new
   end
 
   def create
     @list = List.new(list_params)
-    if @list.update
+    if @list.save
       redirect_to list_path(@list)
     else
       render :new

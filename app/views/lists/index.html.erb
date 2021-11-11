@@ -1,1 +1,8 @@
-<%= render "partials/navbar" %>
+<div class="header">
+  <h1>Lists</h1>
+</div>
+<div class="lists-index">
+  <% @lists.each do |list| %>
+    <h3><%= link_to list.name, list_path(list) %></h3>
+  <% end %>
+</div>

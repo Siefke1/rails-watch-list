@@ -1,12 +1,15 @@
 class BookmarksController < ApplicationController
 
-  before_action :set_bookmark, only: [:new, :destroy]
+  before_action :set_bookmark, only: [:destroy]
 
   def index
     @bookmarks = Bookmark.all
   end
 
   def new
+    @list = List.find(params[:list_id])
+    @movie = Movie.find(params[:movie_id])
+    @bookmark = Bookmark.list.movie.new
   end
 
   def create
