@@ -1,8 +1,10 @@
 <div class="header">
-  <h1>Lists</h1>
+  <h1 style="text-align: center;">Lists</h1>
 </div>
-<div class="lists-index">
+<div class="lists-index row justify-content-center">
   <% @lists.each do |list| %>
-    <h3><%= link_to list.name, list_path(list) %></h3>
+    <div class="list-card col-4 ml-1 mr-1 mb-1" style="background-image: url(https://source.unsplash.com/random);">
+      <h3><%= link_to list.name, list_path(list) %></h3>
+    </div>
   <% end %>
 </div>
